@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <% if (listaProductos.length) { %>
+                <div class="wrapper">
+                    <table class="table table-hover tablaproductos">
+                        <thead>
+                            <tr>
+                                <th scope="col">Producto</th>
+                                <th  class="text-center" scope="col">Precio</th>
+                                <th  class="text-center" scope="col">Imagen</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% listaProductos.forEach(function(producto) { %>
+                            <tr>
+                                <td><%= producto.title %></td>
+                                <td class="text-center"><%= producto.price %></td>
+                                <td class="text-center"><img src="<%= producto.thumbnail %>" alt="<%= producto.title %>" class="tablaproductos__image"></td>
+                            </tr>
+                            <% }); %> 
+                        </tbody>
+                    </table>
+                </div>
+            <% } else { %>
+                <div class="wrapper text-center">
+                    <h2>No hay productos</h2>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
